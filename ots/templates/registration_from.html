@@ -1,0 +1,28 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block title %} ots registration Form {% endblock title %}
+{% block top %}
+
+<a href="{% url 'OTS:welcome' %}">Home</a>
+<a href="{% url 'OTS:login' %}">login</a>
+{% endblock %}
+{% block content %}
+<div class="all-forms">
+    <form action="{% url 'OTS:storeCandidate' %}" method="post">
+        {% csrf_token %}
+        <h1>Registration Form</h1>
+        <label for="name">username</label>
+        <input type="text" name="username">
+        <label for="password">password</label>
+        <input type="password" name="password">
+        <label for="name">name</label>
+        <input type="text" name="name">
+
+
+        <button type="submit">submit</button>
+        <button type="reset">clear</button>
+    </form>
+    <p>Already have an account? <a href="{% url 'OTS:login' %}">Login</a></p>
+</div>
+{% endblock %}

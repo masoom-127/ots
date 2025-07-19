@@ -1,0 +1,10 @@
+{% extends 'main.html' %}
+
+{% block title %} welcome to online testing system {% endblock title %}
+{% block top %}
+<a href="{% url 'OTS:registrationForm' %}">sigup</a>
+<a href="{% url 'OTS:login' %}">login</a>
+{% endblock %}
+{% block content %}
+<p>welcome online system</p>
+{% endblock %}
